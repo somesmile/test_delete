@@ -1,0 +1,45 @@
+大调和弦
+
+C调和弦           C#和弦
+
+C E G                C#M      C#    F       G#       
+D F A                 D#m     D#    F#     A#    
+E G B                Fm         F       G#     C
+F A C                F#M      F#     A#     C# 
+G B D               
+A C E
+B D F
+
+F#调和弦
+
+F#    A#     C#
+G#   B       D#
+A#   C#     F
+B     D#     F#
+C#   F        G# 
+D#   F#      A#
+F      G#     B 
+
+黑键6和弦(大三和弦)
+
+F --  G# --   C#
+G --   A#  -- D#
+A# -- C#  -- F#
+C --   D#  -- G#
+B --   D  --    A# 
+
+白键6和弦(大三和弦)
+
+E  --   G  --   C
+F#  --  A  --   D 
+G#  -- B  --   E 
+A  ---  C  --    F 
+B  ---  D  --   G
+C#  -- E  ---  A 
+D#  -- F#  -- B  
+
+
+
+24个调的指法特点
+指法：4+3  -----C D E G A 
+
