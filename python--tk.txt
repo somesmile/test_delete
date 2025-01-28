@@ -1,0 +1,194 @@
+tkinter ：python自带的GUI库，是tcl, tk包的
+python接口封装。具有良好的跨平台性，继承
+了python特点，适合开发小型工具，简单应用
+程序。
+-----------------------------------------------------
+GUI 编程核心概念：
+
+根窗口root，顶级窗口TopLeve
+画布Canvas，容器Frame，标签Lable等，16个核
+心小组件。
+
+按钮(4)，文本输入框(2)，标签(2)，
+菜单(2)，滚动条(2)， 其他(4)
+
+按钮组件              文本输入框组件     标签组件
+Button                 Entry                    Label
+RadioButton       Text                      Message
+CheckButton
+Listbox
+
+菜单组件              滚动条组件            其他组件
+
+Menu                  scale                     Canvas
+MenuButton       Scrollbar               Frame
+                                                         Toplevel 
+                                                         Labelframe
+-----------------------------------------------------
+
+导，主，添，循
+Tkinter的GUI组件有两个根父类，他们都直接
+继承了object类：
+Misc：是所有组件的根父类
+Wm:   提供与窗口管理器通信的功能函数
+-----------------------------------------------------
+Pack、Place、Grid：布局管理器
+
+pack()方法      grid()方法      place()方法
+anchor           column          anchor
+expand          columnsapn   bordermode
+fill                  row                 x、y
+side               rowspan          relx、rely
+padx,pady     padx,pady       height/width
+ipadx,ipady   ipadx,ipady     relheight/relwidth
+                      sticky
+-----------------------------------------------------
+
+主窗口常用方法：
+ 
+开关，大小，标题， 颜色，状态， 属性，刷新，
+返回分辨率，协议
+
+mainloop()             窗口主循环显示
+quit()                      关闭当前窗口
+destory()                关闭当前窗口(摧毁小组件)
+geometry( )            窗口大小和偏移（字符串参数）
+minsize()	               设置窗口调整最小范围(数对）
+maxsize()                最大范围
+state()                     normal,icon,zoomed                 
+withdraw()              隐藏主窗口 ( 不销毁 )
+iconify()                  窗口最小化
+deiconify()              窗口还原
+
+config()                   窗口设置( 颜色，大小等)
+update()                  窗口刷新
+title("title")	          窗口标题名(字符串参数)
+iconbitmap()           窗口左上角图标（文件路径）
+winfo_width()          获取窗口的x分辨率
+winfo_height()        获取窗口的y分辨率
+protocol                  关闭窗口触发回调函数("协议
+                                 名",回调函数)                                                  	
+attributes()
+
+                    ("-toolwindow", True) 
+                    ("-topmost", True)
+                  （'-transparentcolor','blue'）
+                    ('-alpha',0.5)
+                  （ "-fullscreen"，Ture）
+                    
+transient(master)                    建立临时窗口，会随主
+                                                窗口最小化，关闭
+['background']='blue'             设置窗口背景色
+after(second,command)          多少秒后自动触发事件
+overrideredirect(True)             隐藏窗口边框和标题栏
+----------------------------------------------------------
+Label控件属性：
+
+anchor                                 文本方位（n、ne、e、se、s、
+                                            sw、w、nw、center）
+bg/fg                                   背景色/前景色
+bd                                        边框宽度
+compound                          有图像时和文本关系       
+cursor                                   arrow、circle、cross、plus
+
+font	                                       文本的 (字体,大小,样式）元组             
+height/width                       设置 Lable 的高度/宽度
+highlightbackground         未获得焦点时，边框颜色
+highlightcolor                     获得焦点的话时高亮边框的颜色
+image                                   PhotoImage、BitmapImage对象
+justify                                   多行文本的对齐方式 left、right、
+                                             center
+padx/pady                           距离内边框距离
+relief                                    边框样式 flat groove raised  ridg
+                                              solid  sunken 
+state	                            "normal"，"active"，"disabled"
+takefocus	                             默认值为False
+
+text                                       显示文本，可包含换行符 
+underline                             给指定的字符添加下划线
+wraplength                          将 Label 显示的文本分行
+
+回调函数 ：该函数的名作为其他函数的参数
+-----------------------------------------------------------------
+Menu组件
+topleve    （主目录菜单）
+pull-down（下拉式菜单）
+pop-up    （弹出式菜单）
+
+菜单的构成
+菜单栏   menu bar
+菜单      menu
+菜单项   menu item
+
+
+创建菜单方法：
+
+add_cascade(**options)	      添加父菜单
+add_checkbutton(**options)	添加多选按钮的菜单项
+add_command(**options)	      添加普通菜单项
+add_radiobutton(**options)	添加单选按钮菜单项
+add_separator(**options)	添加分割线
+add(add(itemType, options))	添加以上菜单项，options
+
+菜单项有关方法：
+
+delete(index1, index2=None)	       删除有值索引菜单项
+entrycget(index, option)	              获得指定菜单项的某选项值
+entryconfig(index, **options)	       设置指定菜单项的选项
+index(index)	                                      返回index值
+insert(index, itemType, **options)    插入指定类型的菜单
+                                                               项到index的位置
+invoke(index)	                                      调用 index关联项的方法
+post(x, y)	                                     在指定的位置显示弹出菜单
+type(index)	                                      获得 index 参数指定菜单项的类型
+
+unpost()	                         移除弹出菜单
+yposition(index)	                   返回 index项的垂直偏移值
+
+Menu  options 参数
+------------------------------------------------------------------------
+ Event事件处理
+
+语法格式： widget.bind("<event>",func)
+
+widget       代表控件的实例对象
+bind()        方法进行事件绑定，两个参数
+<event>    字符串参数，表示事件类型，用尖括号包裹
+func           回调函数名
+
+事件类型事件码： 
+鼠标、键盘、光标等事件
+event 格式： <modifier-type-detail>
+
+修饰符说明
+
+Control	       事件发生时需按下 Control 键
+Alt	       事件发生时需按下 Alt 键
+Shift	       事件发生时需按下 Shift 键
+Lock	       事件发生时需处于大写锁定状态
+Double	       事件连续发生两次，比如双击鼠标
+Triple	       事件连续发生三次
+Quadruple     事件连续发生四次
+
+
+<ButtonPress-1>	   <Button-1>，1/2/3，分别代表左中右
+<ButtonRelease-1>   释放左键
+<B1-Motion>	            按住左键移动，<B2-Motion><B3-Motion>
+<MouseWheel>	    转动鼠标滑轮
+<Double-Button-1>  双击鼠标左键
+<Enter>	                    光标进入实例
+<Leave>	                    光标离开实例
+
+Event事件对象常用属性
+
+widget	                发生事件的控件
+x,y	                        相对于窗口的左上角而言，当前鼠标的坐标位置
+x_root, y_root	相对于屏幕的左上角而言，当前鼠标的坐标位置
+char	                        用来显示所按键相对应的字符
+keysym	                按键名，比如 Control_L 表示左边的 Ctrl 按键
+keycode	                 按键码，比如 Delete 按键码是107
+num	                         1/2/3中的一个，鼠标键，
+width,height	        控件的修改后的尺寸，对应着 <Configure>事件
+type	                        事件类型
+
+
